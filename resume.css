@@ -1,3 +1,7 @@
+.material-icons {
+    width: 25px;
+}
+
 * {
     width: 100%;
     margin: 0px;
@@ -27,7 +31,7 @@ body {
     background-color: rgba(240, 240, 240, 0.815);
 }
 
-.profile-image {
+.profile-image {  /* is flex neeeded? */
     display: flex;
     justify-content: right;
     align-items: center;
@@ -58,7 +62,6 @@ body {
     border-radius: 10px;
 }
 .titles h3 {
-    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: lighter;
     font-size: 30px;
@@ -69,8 +72,6 @@ body {
     font-size: 20px;
     font-weight: normal;
     color: rgba(0, 0, 0, 0.74);
-    display: flex;
-    flex-direction: row;
     height: 85%;
     font-weight: normal;
     text-decoration: none;
@@ -125,7 +126,7 @@ li {
     padding-bottom: 15px;
     font-weight: normal;
 }
-.contact i a, .contact-block {
+.contact span, .contact a, .contact div span, .contact div a{
     color: black;
     font-family: 'Times New Roman', Times, serif;
     text-decoration: none;
@@ -173,3 +174,53 @@ li {
 .work-summary {
     padding-bottom: 20px;
 }
+
+
+@media only screen and (min-width: 700px) {
+    .profile , .work-experience {
+        border-width: 1px;
+        border-left-style: solid;
+        border-image: 
+            linear-gradient(
+            to bottom, 
+            rgb(27, 1, 1), 
+            rgba(0, 0, 0, 0)
+            ) 1 100%;
+    }
+}
+
+@media only screen and (max-width: 701px) {
+
+    .titles {
+        padding-left: 0px;
+        text-align: center;
+    }
+    .profile-image{
+        margin-left: 0px;
+        padding-right: 0px;
+        justify-content: center;
+        margin: 20px 0px;
+    }
+    .header-layout {
+        display: flex;
+        flex-direction: column;
+    }
+    .body-layout {
+        display: flex;
+        flex-direction: column;
+    }
+    .titles {
+        padding: 0px;
+        letter-spacing: 20px;
+        color: gray;
+    }
+    .body-left , .body-right{
+        width: 100%;
+    }
+} 
+ 
+
+
+
+
+
