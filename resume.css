@@ -132,7 +132,7 @@ li {
     text-decoration: none;
 }
 
-.education {
+.education-block {
     display: flex;
     flex-direction: column;
 }
@@ -161,23 +161,23 @@ li {
     text-align: right;
 }
 
-.job-title {
+.sub-block-title {
     font-weight: bold;
 }
-.org-details{
+.meta-data{
     padding-top: 10px;
     padding-bottom: 10px;
     color: rgb(143, 143, 143);
     display: flex;
     justify-content: space-around;
 }
-.work-summary {
+.content-summary {
     padding-bottom: 20px;
 }
 
 
 @media only screen and (min-width: 700px) {
-    .profile , .work-experience {
+    .profile-block , .work-block {
         border-width: 1px;
         border-left-style: solid;
         border-image: 
