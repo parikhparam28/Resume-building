@@ -1,5 +1,7 @@
 .material-icons {
     width: 25px;
+    height: 25px;
+    padding-bottom: 0px !important;
 }
 
 * {
@@ -7,19 +9,28 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-size: 20px;
+}
+
+.form-hide {
+    display: none;
+}
+.create-forms {
+    width: 60%;
+    padding-top: 50px;
+    padding-left: 15px;
 }
 
 body {
     background-color: white;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .layout {   
     display: flex;
     flex-direction: column;
-    margin: 50px 50px;
+    margin: 50px;
     border: 1px;
     border-style: solid;
     border-color: black;
@@ -27,7 +38,6 @@ body {
 
 .header-layout {
     display: flex;
-    height: 15%;
     background-color: rgba(240, 240, 240, 0.815);
 }
 
@@ -54,25 +64,24 @@ body {
     padding-left: 50px;
     letter-spacing: 20px;
     color: gray;
+    padding-bottom: 10px;
 }
 .titles h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 80px;
+    font-size: calc(80rem/20);
     font-style: italic;
     border-radius: 10px;
 }
 .titles h3 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: lighter;
-    font-size: 30px;
+    font-size: calc(30rem/20);
 }
 
 .body-layout {    
     font-family: sans-serif;
-    font-size: 20px;
     font-weight: normal;
     color: rgba(0, 0, 0, 0.74);
-    height: 85%;
     font-weight: normal;
     text-decoration: none;
 }
@@ -89,7 +98,7 @@ li {
 
 .topic {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 25px;
+    font-size: calc(25rem/20);
     font-weight:300;
     letter-spacing: 5px;
     color: gray;
@@ -122,14 +131,27 @@ li {
     width: 65%;
 }
 
+
 .contact i {
     padding-bottom: 15px;
     font-weight: normal;
+    /* text-overflow: ellipsis; */
 }
 .contact span, .contact a, .contact div span, .contact div a{
     color: black;
     font-family: 'Times New Roman', Times, serif;
     text-decoration: none;
+}
+.contact div {
+    display:flex; 
+    padding-bottom: 10px;
+}
+.contact .topic {
+    display: flex;
+    flex-direction: column;
+}
+.contact i a {
+    text-overflow: ellipsis;
 }
 
 .education-block {
@@ -138,7 +160,7 @@ li {
 }
 .education-details div {
     padding-bottom: 5px;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 .degree{
     color: grey;
@@ -172,11 +194,11 @@ li {
     justify-content: space-around;
 }
 .content-summary {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 }
 
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 701px) {
     .profile-block , .work-block {
         border-width: 1px;
         border-left-style: solid;
@@ -189,8 +211,28 @@ li {
     }
 }
 
-@media only screen and (max-width: 701px) {
-
+@media only screen and (max-width: 700px) {
+    * {
+        font-size: 17px;
+    }
+    .contact i {
+        padding-bottom: 7px;
+    }
+    .contact .icons {
+        padding-bottom: 0px;
+    }
+    li {
+        padding-bottom: 5px;
+    }
+    .topic{
+        padding-bottom: 15px;
+    }
+    .layout {
+        margin: 10px 10px;
+    }
+    .blocks{
+        padding: 10px 20px;
+    }
     .titles {
         padding-left: 0px;
         text-align: center;
@@ -216,6 +258,9 @@ li {
     }
     .body-left , .body-right{
         width: 100%;
+    }
+    .university{
+        margin-bottom: 10px;
     }
 } 
  

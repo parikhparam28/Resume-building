@@ -5,18 +5,111 @@
         <link rel="stylesheet" type="text/css" href="resume.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="icon" href="resources/stark.png" type="image/icon type">
         <title>Tony's Resume</title>
     </head>
-    <body>
-        <div class="layout">
+    <body id="body-main">
 
+        <div class="create-forms" id="allforms-id">
+            <select name="resume-details" id="resume-details" class="topic-select">
+                <option value="header">Header</option>
+                <option value="image">Image</option>
+                <option value="contact">Contact</option>
+                <option value="education">Education</option>
+                <option value="skills">Skills</option>
+                <option value="expertise">Expertise</option>
+                <option value="profile">Profile</option>
+                <option value="work-experience">Work-experience</option>
+            </select>
+        
+            <form class="header form-hide">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name-value">
+                <label for="profession">Profession</label>
+                <input type="text" name="profession" id="profession-value">
+                <button type="button" onclick="addNameProfession(this.form)">Submit</button>
+            </form>
+            
+            <form class="image form-hide">
+                <label for="image">Insert Image</label>
+                <input type="file" name="image" id="image-input" accept="image/*">
+            </form>
+
+            <form class="contact form-hide">
+                <label for="contactno">Contact number</label>
+                <input type="number" name="contactno" id="contactno-value">
+                <label for="emailid">Email Id</label>
+                <input type="email" name="emailid" id="emailid-value">
+                <label for="linkedin">Linkedin</label>
+                <input type="url" name="linkedin" id="linkedin-value">
+                <label for="country">Country</label>
+                <input type="text" name="country" id="country-value">
+                <label for="weblink">URL</label>
+                <input type="url" name="weblink" id="weblink-id">
+                <button type="button" onclick="addContactDetail(this.form)">Submit</button>
+            </form> 
+
+            <form class="education form-hide">
+                <select name="degree_details" id="degree-type">
+                    <option value="Bachelors Degree">Bachelors Degree</option>
+                    <option value="Masters Degree">Masters Degree</option>
+                </select>
+                <label for="field">Field</label>
+                <input type="text" name="field" id="field-value">
+                <label for="grade">Grade</label>
+                <input type="text" name="grade" id="grade-value">
+                <label for="university">University</label>
+                <input type="text" name="university" id="university-value">
+                <label for="start_year">Start Year</label>
+                <input type="number" name="start_year" id="start-year-value" min="1900" max="2023" step="1" value="2023">
+                <label for="end_year">End Year</label>
+                <input type="number" name="end_year" id="end-year-value" min="1900" max="2023" step="1" value="2023"> 
+                <button type="button" onclick="addEducationDetail(this.form)">Add</button>
+            </form> 
+
+            <form class="skills form-hide">
+                <label for="skill">Skill</label>
+                <input type="text" name="skill" id="skill-value">
+                <button type="button" onclick="addSkill(this.form)">Add</button>
+            </form>
+            
+            <form class="expertise form-hide">
+                <textarea name="expertise" id="expertise" cols="30" rows="10" placeholder="Write Here" value=""></textarea>
+                <button type="button" onclick="addExpertise(this.form)">Submit</button>
+            </form>
+
+            <form class="profile form-hide">
+                <textarea name="profile" id="profile" cols="30" rows="10" placeholder="Write Here" value=""></textarea>
+                <button type="button" onclick="addProfile(this.form)">Submit</button>
+            </form>
+
+            <form class="work-experience form-hide">
+                <label for="company">Company</label>
+                <input type="text" name="company" id="company-value">
+                <label for="month_year1">Work Start</label>
+                <input type="month" name="month_year1" id="month-value1">
+                <label for="month_year2">Work End</label>
+                <input type="month" name="month_year2" id="month-value2">
+                <textarea name="work_summary" id="worksummaryId" cols="30" rows="10" placeholder="Type Here Work Summary"></textarea>
+                <button type="button" onclick="addBulletedList()">Add bullet note</button>
+                <label for="bullet_point">Bullet points</label>
+                <input type="text" name="bullet_point" id="bulletpointId">
+                <ul id="bulletsId"></ul>
+                <button type="button" onclick="addWorkExperience(this.form)">Add</button>
+            </form>
+
+            <div id="div-values"></div>
+
+        </div>
+
+        <div class="layout">
             <div class="header-layout">
-                <div class="titles">
+                <div class="titles" id="title-id">
                     <h1>Tony Stark</h1>
                     <h3>Avenger</h3>
                 </div>
                 <div class="profile-image">
-                    <img src="resources/stark.jpeg" alt="profile-image">
+                    <img src="resources/stark.jpeg" id="image-preview" alt="profile-image">
                 </div>
             </div>
             
@@ -27,14 +120,13 @@
                             Contact
                             <hr/>
                         </div>
-                        <i class="fa-solid fa-user"> <span> +999-999-999</span></i>
-                        <i class="fa-solid fa-envelope contact-block"> <a href="google.com"> ironman@gmail.com</a></i>
-                        <i class="fa-brands fa-linkedin contact-block"><a href="google.com">  Linkedin</a></i>
-                        <div><i class="material-icons">room</i> <span>USA</span></div>   
-                        <!-- <i class="fa-solid fa-link"> <a href="google.com">ironman.com</a> </i> -->
-                        <div><i class="material-icons">link</i><a href="google.com">  ironman.com</a></div> 
+                        <i class="fa-solid fa-user"> <span id="contactno-id">+999-999-999</span></i>
+                        <i class="fa-solid fa-envelope contact-block"> <a href="mailto:paraikhparam28@gmail.com" id="emailid-id" >ironman@gmail.com</a> </i> 
+                        <i class="fa-brands fa-linkedin contact-block"><a href="https://in.linkedin.com/in/param-parikh-0924b0194" id="linkedin-id">  Linkedin</a></i>
+                        <div class="icons"><i class="material-icons">room</i> <span id="country-id">USA</span></div>   
+                        <div class="icons"><i class="material-icons">link</i><a href="google.com" id="url-id">ironman.com</a></div> 
                     </div>
-                    <div class="education-block blocks">
+                    <div class="education-block blocks" id="education-id">
                         <div class="topic">
                             Education
                             <hr/>
@@ -64,7 +156,7 @@
                             </div>
                         </div>
                     </div>  
-                    <div class="skills-block blocks">
+                    <div class="skills-block blocks" id="skills-id">
                         <div class="topic">
                             Skills
                             <hr/>
@@ -77,12 +169,12 @@
                         <li>skill-1</li>
                         <li>skill-1</li>
                     </div>  
-                    <div class="expertise-block blocks">
+                    <div class="expertise-block blocks" id="expertise-id">
                         <div class="topic">
                             Expertise
                             <hr/>
                         </div>
-                        <div>
+                        <div id="expertise-value-id">
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt quo iure doloremque, debitis quasi voluptatum voluptatibus sunt voluptates animi totam cumque, enim ad numquam, vel est modi. Exercitationem, temporibus itaque!
                         </div>
                     </div>                      
@@ -93,11 +185,11 @@
                             Profile
                             <hr/>
                         </div>
-                        <div class="profile-content">
+                        <div class="profile-content" id="profile-id-main">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae magni voluptates saepe fuga nostrum ratione quasi eaque nesciunt, ex molestiae similique harum quidem fugiat perferendis perspiciatis eum maxime minus Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur saepe consectetur quo cumque nostrum ipsum recusandae aut consequuntur ab optio nesciunt, suscipit, eius nam sint quaerat debitis asperiores laborum porro.
                         </div>
                     </div>
-                    <div class="work-block blocks">
+                    <div class="work-block blocks" id="workexperienceId">
                         <div class="topic">
                             Work-experience
                             <hr/>
@@ -110,9 +202,8 @@
                             <li>Bulleted Job Description</li>
                             <li>Bulleted Job Description</li>
                             <li>Bulleted Job Description</li>
+                            <br>
                         </div>
-                        <br>
-                        <br>
                         <div>
                             <div class="sub-block-title">Job title / Position</div>
                             <div class="meta-data"><span>Company</span><span class="year">MM/YY - MM/YY</span></div>
@@ -121,9 +212,8 @@
                             <li>Bulleted Job Description</li>
                             <li>Bulleted Job Description</li>
                             <li>Bulleted Job Description</li>
+                            <br>
                         </div>
-                        <br>
-                        <br>
                         <div>
                             <div class="sub-block-title">Job title / Position</div>
                             <div class="meta-data"><span>Company</span><span class="year">MM/YY - MM/YY</span></div>
@@ -132,12 +222,14 @@
                             <li>Bulleted Job Description</li>
                             <li>Bulleted Job Description</li>
                             <li>Bulleted Job Description</li>
+                            <br>
                         </div>
                     </div> 
                 </div>
             </div>
-
         </div>
-
+        <script src="script.js"></script>
     </body>
 </html>
+
+

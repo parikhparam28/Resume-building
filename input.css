@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex; 
+    flex-direction: column;
+}
+.form-hide {
+    display: none;
+}
+
