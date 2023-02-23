@@ -3,6 +3,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
         <link rel="stylesheet" type="text/css" href="resume.css">
+        <link rel="stylesheet" type="text/css" href="form.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="icon" href="resources/stark.png" type="image/icon type">
@@ -10,8 +11,9 @@
     </head>
     <body id="body-main">
 
+
         <div class="create-forms" id="allforms-id">
-            <select name="resume-details" id="resume-details" class="topic-select">
+            <select class='resume-details' name="resume-details" id="resume-details" class="topic-select">
                 <option value="header">Header</option>
                 <option value="image">Image</option>
                 <option value="contact">Contact</option>
@@ -21,88 +23,12 @@
                 <option value="profile">Profile</option>
                 <option value="work-experience">Work-experience</option>
             </select>
-        
-            <form class="header form-hide">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name-value">
-                <label for="profession">Profession</label>
-                <input type="text" name="profession" id="profession-value">
-                <button type="button" onclick="addNameProfession(this.form)">Submit</button>
-            </form>
-            
-            <form class="image form-hide">
-                <label for="image">Insert Image</label>
-                <input type="file" name="image" id="image-input" accept="image/*">
-            </form>
 
-            <form class="contact form-hide">
-                <label for="contactno">Contact number</label>
-                <input type="number" name="contactno" id="contactno-value">
-                <label for="emailid">Email Id</label>
-                <input type="email" name="emailid" id="emailid-value">
-                <label for="linkedin">Linkedin</label>
-                <input type="url" name="linkedin" id="linkedin-value">
-                <label for="country">Country</label>
-                <input type="text" name="country" id="country-value">
-                <label for="weblink">URL</label>
-                <input type="url" name="weblink" id="weblink-id">
-                <button type="button" onclick="addContactDetail(this.form)">Submit</button>
-            </form> 
-
-            <form class="education form-hide">
-                <select name="degree_details" id="degree-type">
-                    <option value="Bachelors Degree">Bachelors Degree</option>
-                    <option value="Masters Degree">Masters Degree</option>
-                </select>
-                <label for="field">Field</label>
-                <input type="text" name="field" id="field-value">
-                <label for="grade">Grade</label>
-                <input type="text" name="grade" id="grade-value">
-                <label for="university">University</label>
-                <input type="text" name="university" id="university-value">
-                <label for="start_year">Start Year</label>
-                <input type="number" name="start_year" id="start-year-value" min="1900" max="2023" step="1" value="2023">
-                <label for="end_year">End Year</label>
-                <input type="number" name="end_year" id="end-year-value" min="1900" max="2023" step="1" value="2023"> 
-                <button type="button" onclick="addEducationDetail(this.form)">Add</button>
-            </form> 
-
-            <form class="skills form-hide">
-                <label for="skill">Skill</label>
-                <input type="text" name="skill" id="skill-value">
-                <button type="button" onclick="addSkill(this.form)">Add</button>
-            </form>
-            
-            <form class="expertise form-hide">
-                <textarea name="expertise" id="expertise" cols="30" rows="10" placeholder="Write Here" value=""></textarea>
-                <button type="button" onclick="addExpertise(this.form)">Submit</button>
-            </form>
-
-            <form class="profile form-hide">
-                <textarea name="profile" id="profile" cols="30" rows="10" placeholder="Write Here" value=""></textarea>
-                <button type="button" onclick="addProfile(this.form)">Submit</button>
-            </form>
-
-            <form class="work-experience form-hide">
-                <label for="company">Company</label>
-                <input type="text" name="company" id="company-value">
-                <label for="month_year1">Work Start</label>
-                <input type="month" name="month_year1" id="month-value1">
-                <label for="month_year2">Work End</label>
-                <input type="month" name="month_year2" id="month-value2">
-                <textarea name="work_summary" id="worksummaryId" cols="30" rows="10" placeholder="Type Here Work Summary"></textarea>
-                <button type="button" onclick="addBulletedList()">Add bullet note</button>
-                <label for="bullet_point">Bullet points</label>
-                <input type="text" name="bullet_point" id="bulletpointId">
-                <ul id="bulletsId"></ul>
-                <button type="button" onclick="addWorkExperience(this.form)">Add</button>
-            </form>
-
-            <div id="div-values"></div>
-
+            <div id="formDisplay"></div>
         </div>
+    
+        <div class="layout" id="layoutId" onclick="previewResume()">
 
-        <div class="layout">
             <div class="header-layout">
                 <div class="titles" id="title-id">
                     <h1>Tony Stark</h1>
@@ -115,12 +41,12 @@
             
             <div class="body-layout">
                 <div class="body-left">
-                    <div class="contact blocks">
+                    <div class="contact blocks" id="contactId">
                         <div class="topic">
                             Contact
                             <hr/>
                         </div>
-                        <i class="fa-solid fa-user"> <span id="contactno-id">+999-999-999</span></i>
+                        <i class="fa-solid fa-user"> <span id="contactno-id">999999999</span></i>
                         <i class="fa-solid fa-envelope contact-block"> <a href="mailto:paraikhparam28@gmail.com" id="emailid-id" >ironman@gmail.com</a> </i> 
                         <i class="fa-brands fa-linkedin contact-block"><a href="https://in.linkedin.com/in/param-parikh-0924b0194" id="linkedin-id">  Linkedin</a></i>
                         <div class="icons"><i class="material-icons">room</i> <span id="country-id">USA</span></div>   
@@ -131,7 +57,7 @@
                             Education
                             <hr/>
                         </div>
-                        <div class="education-details">
+                        <div class="education-details" id="education-999900-main">
                             <div class="degree">Bachelors Degree</div>
                             <div>
                                 <span class="degree-type">Computer Science Engineering </span>
@@ -143,7 +69,7 @@
                                 <span>Stanford university</span> <span class="year">2001-2005</span>
                             </div>
                         </div>
-                        <div class="education-details">
+                        <div class="education-details" id="education-999901-main">
                             <div class="degree">Bachelors Degree</div>
                             <div>
                                 <span class="degree-type">Computer Science Engineering </span>
@@ -161,20 +87,20 @@
                             Skills
                             <hr/>
                         </div>
-                        <li>skill-1</li>
-                        <li>skill-1</li>
-                        <li>skill-1</li>
-                        <li>skill-1</li>
-                        <li>skill-1</li>
-                        <li>skill-1</li>
-                        <li>skill-1</li>
+                        <li id="999990-main">skill-1</li>
+                        <li id="999991-main">skill-1</li>
+                        <li id="999992-main">skill-1</li>
+                        <li id="999993-main">skill-1</li>
+                        <li id="999994-main">skill-1</li>
+                        <li id="999995-main">skill-1</li>
+                        <li id="999996-main">skill-1</li>
                     </div>  
                     <div class="expertise-block blocks" id="expertise-id">
                         <div class="topic">
                             Expertise
                             <hr/>
                         </div>
-                        <div id="expertise-value-id">
+                        <div id="expertise-value-id-main">
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt quo iure doloremque, debitis quasi voluptatum voluptatibus sunt voluptates animi totam cumque, enim ad numquam, vel est modi. Exercitationem, temporibus itaque!
                         </div>
                     </div>                      
@@ -185,8 +111,10 @@
                             Profile
                             <hr/>
                         </div>
-                        <div class="profile-content" id="profile-id-main">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae magni voluptates saepe fuga nostrum ratione quasi eaque nesciunt, ex molestiae similique harum quidem fugiat perferendis perspiciatis eum maxime minus Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur saepe consectetur quo cumque nostrum ipsum recusandae aut consequuntur ab optio nesciunt, suscipit, eius nam sint quaerat debitis asperiores laborum porro.
+                        <div class="profile-content" id="profile-add-block">
+                            <div id="profile-id-main">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae magni voluptates saepe fuga nostrum ratione quasi eaque nesciunt, ex molestiae similique harum quidem fugiat perferendis perspiciatis eum maxime minus Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur saepe consectetur quo cumque nostrum ipsum recusandae aut consequuntur ab optio nesciunt, suscipit, eius nam sint quaerat debitis asperiores laborum porro.
+                            </div>
                         </div>
                     </div>
                     <div class="work-block blocks" id="workexperienceId">
@@ -194,7 +122,7 @@
                             Work-experience
                             <hr/>
                         </div>
-                        <div>
+                        <div id="workdiv9999990-main">
                             <div class="sub-block-title">Job title / Position</div>
                             <div class="meta-data"><span>Company</span><span class="year">MM/YY - MM/YY</span></div>
                             <div class="content-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium necessitatibus adipisci nostrum ullam deserunt illo autem cum, doloribus sunt inventore dolor aperiam incidunt sed accusamus nobis quam ipsum? Nulla, debitis.</div>
@@ -204,7 +132,7 @@
                             <li>Bulleted Job Description</li>
                             <br>
                         </div>
-                        <div>
+                        <div id="workdiv9999991-main">
                             <div class="sub-block-title">Job title / Position</div>
                             <div class="meta-data"><span>Company</span><span class="year">MM/YY - MM/YY</span></div>
                             <div class="content-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium necessitatibus adipisci nostrum ullam deserunt illo autem cum, doloribus sunt inventore dolor aperiam incidunt sed accusamus nobis quam ipsum? Nulla, debitis.</div>
@@ -214,7 +142,7 @@
                             <li>Bulleted Job Description</li>
                             <br>
                         </div>
-                        <div>
+                        <div id="workdiv9999992-main">
                             <div class="sub-block-title">Job title / Position</div>
                             <div class="meta-data"><span>Company</span><span class="year">MM/YY - MM/YY</span></div>
                             <div class="content-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium necessitatibus adipisci nostrum ullam deserunt illo autem cum, doloribus sunt inventore dolor aperiam incidunt sed accusamus nobis quam ipsum? Nulla, debitis.</div>

@@ -1,0 +1,117 @@
+
+.create-forms {
+    width: 60%;
+    margin-top: 10px;
+    margin-left: 20px;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(236, 244, 247);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    height: min-content;
+}
+
+.resume-details {
+    margin-bottom: 30px;
+}
+
+div[id = "div-values"] {
+    margin-top: 30px;
+}
+
+.header label{
+    display: block;
+    margin-top: 10px;
+}
+.header button {
+    margin-top: 50px;
+}
+
+.contact label {
+    display: block;
+    margin-top: 10px;
+}
+.contact button {
+    margin-top: 50px;
+    width: 30%;
+}
+
+#div-values > div {
+    margin-bottom: 5px;
+    border: 1px solid rgb(111, 168, 168);
+    padding: 5px;
+}
+.education-degree {
+    margin-top: 5px;
+}
+.education label {
+    display: block;
+    margin-top: 10px;
+}
+.education button {
+    margin-top: 50px;
+}
+.education input {
+    font: 10px;
+}
+
+.skills label {
+    display: inline-block;
+    width: 100%;
+}
+.skills input{
+    width: 200px;
+}
+.skills button{
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100px;
+}
+
+.expertise button {
+    width: 40%;
+}
+
+.profile button {
+    width: 40%;
+}
+
+.work-experience input[name="company"] {
+    margin-bottom: 10px;
+}
+.work-experience > :is(label[for = 'month_year1'], label[for = 'month_year2']) {
+    width: 90px;
+    display: inline-block;
+}
+.work-experience > :is(input[name = 'month_year1'], input[name = 'month_year2']) {
+    width: 230px;
+}
+.work-experience label {
+    display: inline-block;
+    margin-top: 10px;
+}
+.work-experience input[name="bullet_point"]{
+    display: inline-block;
+    width: 75%;
+}
+.work-experience textarea {
+    margin-top: 20px;
+}
+.work-experience button[onclick = "addBulletedList()"] {
+    width: 50px;
+    display: inline-block;
+}
+.work-experience button[onclick = "addWorkExperience(this.form)"] {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.work-experience ul[id = "bulletsId"] {
+    margin-top: 20px;
+}
+.work-experience label[for="bullet_point"] {
+    display: block;
+    margin-bottom: 10px;
+}

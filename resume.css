@@ -1,7 +1,12 @@
 .material-icons {
-    width: 25px;
-    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding-bottom: 0px !important;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 * {
@@ -10,15 +15,6 @@
     padding: 0px;
     box-sizing: border-box;
     font-size: 20px;
-}
-
-.form-hide {
-    display: none;
-}
-.create-forms {
-    width: 60%;
-    padding-top: 50px;
-    padding-left: 15px;
 }
 
 body {
@@ -30,7 +26,7 @@ body {
 .layout {   
     display: flex;
     flex-direction: column;
-    margin: 50px;
+    margin: 10px 50px 50px 50px;
     border: 1px;
     border-style: solid;
     border-color: black;
@@ -135,7 +131,8 @@ li {
 .contact i {
     padding-bottom: 15px;
     font-weight: normal;
-    /* text-overflow: ellipsis; */
+    /* width: 20rem; */
+    text-overflow: ellipsis;
 }
 .contact span, .contact a, .contact div span, .contact div a{
     color: black;
