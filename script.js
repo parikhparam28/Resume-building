@@ -102,7 +102,11 @@ resume_details.addEventListener("change", () => {
         form.setAttribute("class", "skills")
         form.innerHTML = `<label for="skill">Add a skill</label>
         <input type="text" name="skill" id="skill-value">
-        <button type="button" onclick="addSkill(this.form)">Add</button>`
+        <button type="button" onclick="addSkill(this.form)">Add</button>
+        <div class="slider" id="skillSlider">
+            <input type="range" name="rangeSlider" min="0" max="10" step="1" value="0" oninput="rangeSliderValue.innerText = this.value">
+            <span id="rangeSliderValue">0</span>
+        </div>`
     }
     else if (current_value === "expertise") {
         form.setAttribute("class", "expertise")
@@ -266,17 +270,21 @@ function addEducationDetail(formData) {
 
 function addSkill(formData) {
     let data = formData.skill.value
+    let sliderValue = formData.rangeSlider.value
     skill_count++
-    const list1 = document.createElement("li")
-    const list2 = document.createElement("li")
-    setMultipleAttributes(list1, list1Attributes = {'id': skill_count , 'onClick': "removeFromHtml(" + skill_count + ")"})
-    setMultipleAttributes(list2, list2Attributes = {'id': skill_count + '-main'})
-    list1.innerHTML = data
-    list2.innerHTML = data
+    const div1 = document.createElement("div")
+    div1.innerHTML = `
+        <li>${data}</li>
+        <input type="range" min="0" max="10" value="${sliderValue}" style="" disabled>
+    `
+    console.log(sliderValue)
+    const div2 = div1.cloneNode(true)
+    setMultipleAttributes(div2, div2Attributes = {'id': skill_count , 'onClick': "removeFromHtml(" + skill_count + ")"})
+    setMultipleAttributes(div1, div1Attributes = {'id': skill_count + '-main'})
     const skillsdiv = document.getElementById('skills-id')
-    skillsdiv.appendChild(list2)
+    skillsdiv.appendChild(div1)
     const formsdiv = document.getElementById('div-values')
-    formsdiv.appendChild(list1)
+    formsdiv.appendChild(div2)
 }
 
 function addExpertise(formData) {

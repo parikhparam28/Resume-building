@@ -127,6 +127,8 @@ li {
     width: 65%;
 }
 
+/* .contact :
+    i () */
 
 .contact i {
     padding-bottom: 15px;
@@ -180,6 +182,17 @@ li {
     text-align: right;
 }
 
+#skills-id input[type=range] , #div-values input[type=range]
+{
+    -webkit-appearance: none;
+    background: #6D7B8D;
+    appearance: none;
+    height: 0.3rem;
+    border-radius: 999em;
+    width: 80%;
+    margin: 0 10% 0 10%;
+}
+
 .sub-block-title {
     font-weight: bold;
 }
@@ -204,7 +217,7 @@ li {
             to bottom, 
             rgb(27, 1, 1), 
             rgba(0, 0, 0, 0)
-            ) 1 100%;
+            ) 1 100%; 
     }
 }
 
