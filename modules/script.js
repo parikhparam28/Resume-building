@@ -1,12 +1,12 @@
 import topicSelector from "./selector.js";
-import addImage from "./uploadImage.js";
-import addNameProfession from "./nameProfession.js";
-import { addContactDetail, editContact } from "./contactDetail.js";
-import addEducationDetail from "./educationDetail.js";
-import addSkill from "./skillDetail.js";
-import addExpertise from "./expertiseDetail.js";
-import addProfile from "./profileDetail.js";
-import { addWorkExperience, addBulletedList } from "./workExperienceDetail.js";
+import { experienceController, bulletControllerInForm } from "../src/controller/workExperienceController.js";
+import { contactController, contactEdit } from "../src/controller/contactController.js";
+import { updateEducation } from "../src/controller/educationController.js";
+import { updateSkill } from "../src/controller/skillController.js";
+import { addNameProfession } from "../src/controller/nameprofessionController.js";
+import { addExpertise } from "../src/controller/expertiseController.js";
+import { addProfile } from "../src/controller/profileController.js";
+import addImage from "../src/controller/uploadImageController.js";
 
 export let resume_details = document.getElementById('resume-details');
 export let formDataValue;
@@ -26,7 +26,7 @@ let contactDetailObject = {
     linkedin:null,
     country:null,
     url:null 
-};
+}
 
 let educationDetailObject = {
     degree:null,
@@ -88,17 +88,17 @@ export function replaceMultipleChild(elementIds, newElements)
 
 window.addContactDetail = (formData) => {
     formDataValue = formData
-    addContactDetail()
+    contactController()
 }
 
 window.addEducationDetail = (formData) => {
     formDataValue = formData
-    addEducationDetail()
+    updateEducation()
 }
 
 window.addSkill = (formData) => {
     formDataValue = formData
-    addSkill() 
+    updateSkill()
 }
 
 window.addExpertise = (formData) => {
@@ -112,12 +112,12 @@ window.addProfile = (formData) => {
 }
 
 window.addBulletedList = () => {
-    addBulletedList()
+    bulletControllerInForm()
 }
 
 window.addWorkExperience = (formData) => {
     formDataValue = formData
-    addWorkExperience()
+    experienceController()
 }
 
 function deepNodeCreation(elementBlock, Id, displaydiv)
@@ -197,7 +197,7 @@ window.addResumeContent = (displaydiv) => {
 }
 
 window.editContact = () => {
-    editContact()
+    contactEdit()
 }
 
 window.editProfileExpertiseText = (resumeMainId,formTopic) => 

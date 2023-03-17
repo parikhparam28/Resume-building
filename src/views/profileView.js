@@ -1,13 +1,8 @@
-import { formDataValue as formData } from "./script.js"
-import { setMultipleAttributes } from "./script.js"
+import { setMultipleAttributes } from "./index.js";
 
-let profileDetail;
-
-export default function addProfile() {
-    let data = formData.profile.value
-    profileDetail = data
+export function updateProfile(profileData) {
     const div1 = document.createElement('div')
-    div1.innerText = data
+    div1.innerText = profileData.profile
     const div2 = div1.cloneNode(div1)
     setMultipleAttributes(div1, {'id': 'profile-id-main'})
     setMultipleAttributes(div2, {'id': 'profile-id', 'onClick': "removeFromHtml('profile-id')"})

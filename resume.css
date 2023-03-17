@@ -130,8 +130,6 @@ li {
     width: 65%;
 }
 
-/* .contact :
-    i () */
 
 .contact i {
     padding-bottom: 15px;
@@ -143,6 +141,9 @@ li {
     color: black;
     font-family: 'Times New Roman', Times, serif;
     text-decoration: none;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
 }
 .contact div {
     display:flex; 
